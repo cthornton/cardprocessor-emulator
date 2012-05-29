@@ -26,7 +26,6 @@ class PersonController extends Controller {
     return $l;
   }
   
-  
   public function action_issueCard() {
     $p = $this->getPerson();
     $card = new Card(array(
