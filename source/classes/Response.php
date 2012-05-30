@@ -41,11 +41,16 @@ class Response {
   
   
   
-  protected function generateXmlFromArray($array) {
+  protected function generateXmlFromArray($array, $parent = null) {
     if(!is_array($array)) return htmlentities("" . $array);
+    if(count($array) == 1 && is_array(end($array)))
+      return $this->generateXmlFromArray(end($array), key($array));
     $xml = '';
-    foreach($array as $key=>$val)
-      $xml .= "<$key>" . $this->generateXmlFromArray($val) . "</$key>";
+    foreach($array as $key=>$val) {
+      if(is_int($key) && $parent != null) $key = $parent;
+      elseif(is_int($key)) $key = "entry";
+      $xml .= "<$key>" . $this->generateXmlFromArray($val, $key) . "</$key>";
+    }
     return $xml;
   }
   

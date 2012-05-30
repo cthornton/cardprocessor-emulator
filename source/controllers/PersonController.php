@@ -8,9 +8,9 @@ class PersonController extends Controller {
   public function action_index() {
     $list = array();
     foreach($this->company->persons as $person) {
-      $list["person-$person->id"] = $person->attributes();
+      $list[] = $person->attributes();
     }
-    return $list;
+    return array('person' => $list);
   }
   
   public function action_view() {
@@ -22,8 +22,8 @@ class PersonController extends Controller {
     $cards = $this->getPerson()->cards;
     $l = array();
     foreach($cards as $c)
-      $l['card-' . $c->id ] = $c->attributes();
-    return $l;
+      $l[] = $c->attributes();
+    return array('card' => $l);
   }
   
   public function action_issueCard() {

@@ -29,7 +29,7 @@ To view company data:
 ### Persons
 A person is somebody who has a card and can make transactions.
 
-#### Attributes:
+Attributes:
 * first_name
 * last_name
 * address
@@ -58,15 +58,14 @@ To view a specific person:
 `Person/view?personId=thePersonId`
 
 ### Cards
-To issue a card for a specific person. Returns card number, expiration date, etc.
 
-#### Attributes
+Attributes:
 * status
 * number
 * expiration
 * balance
 
-To issue a card:
+To issue a card (returns card number, expiration date, etc)
 
 `Person/issueCard?personId=thePersonId`
 
@@ -74,3 +73,20 @@ To view cards for a person:
 
 `Person/cards?personId=thePersonId`
 
+To view more details about a particular card:
+
+`Card?cardNum=someCardNumber`
+
+### Transactions
+Represents transactions made.
+
+Attributes:
+* card_id
+* amount
+* merchant
+* description
+* type
+
+To view transactions for a particular card:
+
+`Card/transactions?cardNum=someCardNumber`

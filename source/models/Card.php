@@ -5,6 +5,10 @@ class Card extends ModelBase {
     array('person'),
   );
   
+  static $has_many = array(
+    array('transactions'),
+  );
+  
   static $validates_presence_of = array(
      array('person'), array('status'), array('number'), array('expiration'), array('balance')
   );
