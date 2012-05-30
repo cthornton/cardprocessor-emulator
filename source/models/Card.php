@@ -56,10 +56,11 @@ class Card extends ModelBase {
       'merchant'    => $merchant,
       'type'        => $type,
     ));
-    Card::transaction(function() use($type, $amount, $description, $merchant, $transaction) {
+    $act = $this->account;
+    Card::transaction(function() use($type, $amount, $description, $merchant, $transaction, $act) {
       $transaction->save();
-      $this->account->balance += $amount;
-      $this->account->save();
+      $act->balance += $amount;
+      $act->save();
     });
     return $transaction;
   }
