@@ -8,11 +8,7 @@ class CardController extends Controller {
    */
   public function __construct() {
     $this->requireCompany();
-    /*
-    $this->card = Card::first(array(
-      'joins' => array('person'),
-      'conditions' => array('persons.company_id = ? AND (cards.number = ? OR cards.id = ?)', $this->company->id, $_GET['cardNum'], $_GET['cardId']),
-    )); */
+    $this->card = Card::first(array('conditions' => array(' (number = ? OR id = ?) ', $_GET['cardNum'], $_GET['cardId'])));
     if($this->card == null) throw new ResponseException('Card not found', -4);
   }
   
@@ -24,10 +20,16 @@ class CardController extends Controller {
     return $this->action_index();
   }
   
+  public function action_activate() {
+    $this->card->status = Card::$STATUS_ACTIVE;
+    $this->card->save();
+    return $this->action_view();
+  }
+  
   public function action_deactivate() {
     $this->card->status = Card::$STATUS_DEACTIVE;
     $this->card->save();
-    return $this->action_index();
+    return $this->action_view();
   }
   
   
