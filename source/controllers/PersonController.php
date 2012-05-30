@@ -1,10 +1,16 @@
 <?php
+/**
+ * The person controller represents a Person and his abilities
+ */
 class PersonController extends Controller {
   
   public function __construct() {
     $this->requireCompany();
   }
   
+  /**
+   * Views all persons associated with this company
+   */
   public function action_index() {
     $list = array();
     foreach($this->company->persons as $person) {
@@ -13,11 +19,17 @@ class PersonController extends Controller {
     return array('person' => $list);
   }
   
+  /**
+   * View a specific person with a given person ID
+   */
   public function action_view() {
     $p = $this->getPerson();
-    return $p->attributes();
+    return array('person' => $p->attributes());
   }
   
+  /**
+   * Get cards associated with a given person ID
+   */
   public function action_cards() {
     $cards = $this->getPerson()->cards;
     $l = array();
@@ -26,6 +38,9 @@ class PersonController extends Controller {
     return array('card' => $l);
   }
   
+  /**
+   * Issues a card for a person with the given person ID
+   */
   public function action_issueCard() {
     $p = $this->getPerson();
     $card = new Card(array(
@@ -39,6 +54,9 @@ class PersonController extends Controller {
     return $card->attributes();
   }
   
+  /**
+   * Creates a new person
+   */ 
   public function action_new() {
     $person = new Person($this->paramsToAttributes(
       'first_name', 'last_name', 'address', 'address_2', 'city', 'state', 'zipcode', 'ssn', 'phone'));
@@ -47,6 +65,9 @@ class PersonController extends Controller {
     return array('personId' => $person->id);
   }
 
+  /**
+   * Gets a person based upon the current $_GET['personId'] and throws a ResponseException if the person could not be found
+   */
   private function getPerson() {
     $p = Person::first(array('conditions' => array('company_id = ? AND id = ?', $this->company->id, $_GET['personId'])));
     if($p == null) throw new ResponseException('Person not found', -4);

@@ -1,0 +1,44 @@
+#!/bin/bash
+
+function show_help {
+  echo "Available Actions:"
+  echo " * server - starts a development server (PHP 5.4 ONLY!)"
+  echo " * migrate - runs the migration tool"
+}
+
+command=$1
+shift
+
+case "$command" in
+  "server" )
+    php54 -S localhost:8000 -t ./public
+  ;;
+  "migrate" )
+  
+    # Migrations
+    case "$1" in
+    
+      "new" )
+        if [ -z "$2" ]; then
+          echo "Must specify a name for the migration!"
+          exit
+        fi
+        
+        php include/ruckus_migrations/generate.php "$2"
+      ;;
+      "exec" )
+        shift
+        php include/ruckus_migrations/main.php $*
+      ;;
+      *)
+        php include/ruckus_migrations/main.php db:migrate
+      ;;
+    esac
+  
+  
+  ;;
+  *)
+    show_help
+  ;;
+  
+esac

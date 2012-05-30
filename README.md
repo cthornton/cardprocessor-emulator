@@ -77,6 +77,19 @@ To view more details about a particular card:
 
 `Card?cardNum=someCardNumber`
 
+OR you can use the card ID instead of cardNum, so you don't need to store card numbers in your database:
+
+`Card?cardId=someCardId`
+
+To load balance to a card (may fail if it caused card balance to go below zero or card is deactivated):
+
+`Card/loadBalance?cardNum=num&amount=12.345`
+
+To deactivate a card (cannot be undone!):
+
+`Card/deactivate?cardNum=num`
+
+
 ### Transactions
 Represents transactions made.
 

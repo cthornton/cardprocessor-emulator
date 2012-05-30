@@ -10,7 +10,7 @@ require_once INC_DIR . '/activerecord/ActiveRecord.php';
 
 // Initialize ActiveRecord
 ActiveRecord\Config::initialize(function($cfg) {
-  $configs = require_once(SRC_DIR . '/../config.php');
+  $configs = require_once(SRC_DIR . '/../db/config.php');
   $cnxstr = 'mysql://' . $configs['user'] . ':' . $configs['pass'] . '@' . $configs['host'] . '/' . $configs['name'];
   $cfg->set_model_directory(SRC_DIR . '/models');
   $cfg->set_connections(array(

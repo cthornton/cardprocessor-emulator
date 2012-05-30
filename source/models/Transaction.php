@@ -2,11 +2,15 @@
 class Transaction extends ModelBase {
   
   static $validates_presence_of = array(
-     array('company'), array('amount'), array('merchant'),array('description'),array('type')
+     array('amount'),array('description'),array('type')
   );
   
   static $belongs_to = array(
     array('card'),
+  );
+  
+  static $validates_numericality_of = array(
+    array('amount')
   );
   
 }

@@ -1,0 +1,359 @@
+May 30 09:26:48 [info] CREATE TABLE `schema_migrations` (
+`version` varchar(255)) ;
+May 30 09:26:48 [info] CREATE UNIQUE INDEX idx_schema_migrations_version ON `schema_migrations`(`version`)
+May 30 09:26:49 [info] SELECT version FROM schema_migrations
+May 30 09:26:49 [info] SELECT version FROM schema_migrations
+May 30 09:26:49 [info] SELECT version FROM schema_migrations
+May 30 09:26:49 [info] INSERT INTO schema_migrations (version) VALUES ('20120530160743')
+May 30 09:29:39 [info] SELECT version FROM schema_migrations
+May 30 09:29:39 [info] SELECT version FROM schema_migrations
+May 30 09:29:39 [info] SELECT version FROM schema_migrations
+May 30 09:29:39 [info] CREATE TABLE `companies` (
+`id` int(11) UNSIGNED auto_increment NOT NULL,
+`name` varchar(255),
+`username` varchar(255),
+`password` varchar(255),
+`created_at` datetime,
+`updated_at` datetime,
+ PRIMARY KEY (`id`)) ;
+May 30 09:30:32 [info] SELECT version FROM schema_migrations
+May 30 09:30:32 [info] SELECT version FROM schema_migrations
+May 30 09:30:32 [info] SELECT version FROM schema_migrations
+May 30 09:30:32 [info] CREATE TABLE `companies` (
+`id` int(11) UNSIGNED auto_increment NOT NULL,
+`name` varchar(255),
+`username` varchar(255),
+`password` varchar(255),
+`created_at` datetime,
+`updated_at` datetime,
+ PRIMARY KEY (`id`)) ;
+May 30 09:34:41 [info] SELECT version FROM schema_migrations
+May 30 09:34:41 [info] SELECT version FROM schema_migrations
+May 30 09:34:41 [info] SELECT version FROM schema_migrations
+May 30 09:34:46 [info] SELECT version FROM schema_migrations
+May 30 09:34:46 [info] SELECT version FROM schema_migrations
+May 30 09:34:46 [info] SELECT version FROM schema_migrations
+May 30 09:34:46 [info] DROP TABLE IF EXISTS `cards`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `cards` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `person_id` int(11) NOT NULL,
+  `status` int(11) NOT NULL DEFAULT '1',
+  `number` char(15) NOT NULL,
+  `expiration` date NOT NULL,
+  `balance` decimal(14,2) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Table structure for table `persons`
+--
+
+DROP TABLE IF EXISTS `persons`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `persons` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `company_id` int(11) DEFAULT NULL,
+  `first_name` varchar(45) DEFAULT NULL,
+  `last_name` varchar(45) DEFAULT NULL,
+  `address` varchar(45) DEFAULT NULL,
+  `address_2` varchar(45) DEFAULT NULL,
+  `city` varchar(45) DEFAULT NULL,
+  `state` char(2) DEFAULT NULL,
+  `zipcode` char(5) DEFAULT NULL,
+  `ssn` char(10) DEFAULT NULL,
+  `phone` char(10) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+
+--
+-- Table structure for table `companies`
+--
+
+DROP TABLE IF EXISTS `companies`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `companies` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `name` varchar(255) NOT NULL,
+  `username` varchar(255) NOT NULL,
+  `password` varchar(255) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Table structure for table `transactions`
+--
+
+DROP TABLE IF EXISTS `transactions`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `transactions` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `card_id` int(11) NOT NULL,
+  `amount` decimal(10,2) NOT NULL,
+  `merchant` varchar(255) DEFAULT NULL,
+  `description` varchar(255) DEFAULT NULL,
+  `type` varchar(45) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
+/*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
+
+/*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
+/*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;
+/*!40014 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS */;
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+/*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
+May 30 09:35:26 [info] SELECT version FROM schema_migrations
+May 30 09:35:26 [info] SELECT version FROM schema_migrations
+May 30 09:35:26 [info] SELECT version FROM schema_migrations
+May 30 09:35:26 [info] DROP TABLE IF EXISTS `cards`;
+CREATE TABLE `cards` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `person_id` int(11) NOT NULL,
+  `status` int(11) NOT NULL DEFAULT '1',
+  `number` char(15) NOT NULL,
+  `expiration` date NOT NULL,
+  `balance` decimal(14,2) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
+
+
+DROP TABLE IF EXISTS `persons`;
+CREATE TABLE `persons` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `company_id` int(11) DEFAULT NULL,
+  `first_name` varchar(45) DEFAULT NULL,
+  `last_name` varchar(45) DEFAULT NULL,
+  `address` varchar(45) DEFAULT NULL,
+  `address_2` varchar(45) DEFAULT NULL,
+  `city` varchar(45) DEFAULT NULL,
+  `state` char(2) DEFAULT NULL,
+  `zipcode` char(5) DEFAULT NULL,
+  `ssn` char(10) DEFAULT NULL,
+  `phone` char(10) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
+
+
+DROP TABLE IF EXISTS `companies`;
+CREATE TABLE `companies` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `name` varchar(255) NOT NULL,
+  `username` varchar(255) NOT NULL,
+  `password` varchar(255) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
+
+DROP TABLE IF EXISTS `transactions`;
+CREATE TABLE `transactions` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `card_id` int(11) NOT NULL,
+  `amount` decimal(10,2) NOT NULL,
+  `merchant` varchar(255) DEFAULT NULL,
+  `description` varchar(255) DEFAULT NULL,
+  `type` varchar(45) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+May 30 09:36:00 [info] SELECT version FROM schema_migrations
+May 30 09:36:00 [info] SELECT version FROM schema_migrations
+May 30 09:36:00 [info] SELECT version FROM schema_migrations
+May 30 09:36:00 [info] DROP TABLE IF EXISTS `cards`
+May 30 09:36:00 [info] 
+CREATE TABLE `cards` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `person_id` int(11) NOT NULL,
+  `status` int(11) NOT NULL DEFAULT '1',
+  `number` char(15) NOT NULL,
+  `expiration` date NOT NULL,
+  `balance` decimal(14,2) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=latin1
+May 30 09:36:00 [info] 
+
+
+DROP TABLE IF EXISTS `persons`
+May 30 09:36:00 [info] 
+CREATE TABLE `persons` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `company_id` int(11) DEFAULT NULL,
+  `first_name` varchar(45) DEFAULT NULL,
+  `last_name` varchar(45) DEFAULT NULL,
+  `address` varchar(45) DEFAULT NULL,
+  `address_2` varchar(45) DEFAULT NULL,
+  `city` varchar(45) DEFAULT NULL,
+  `state` char(2) DEFAULT NULL,
+  `zipcode` char(5) DEFAULT NULL,
+  `ssn` char(10) DEFAULT NULL,
+  `phone` char(10) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1
+May 30 09:36:00 [info] 
+
+
+DROP TABLE IF EXISTS `companies`
+May 30 09:36:00 [info] 
+CREATE TABLE `companies` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `name` varchar(255) NOT NULL,
+  `username` varchar(255) NOT NULL,
+  `password` varchar(255) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1
+May 30 09:36:00 [info] 
+
+DROP TABLE IF EXISTS `transactions`
+May 30 09:36:00 [info] 
+CREATE TABLE `transactions` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `card_id` int(11) NOT NULL,
+  `amount` decimal(10,2) NOT NULL,
+  `merchant` varchar(255) DEFAULT NULL,
+  `description` varchar(255) DEFAULT NULL,
+  `type` varchar(45) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1
+May 30 09:36:00 [info] 
+May 30 09:36:33 [info] SELECT version FROM schema_migrations
+May 30 09:36:33 [info] SELECT version FROM schema_migrations
+May 30 09:36:33 [info] SELECT version FROM schema_migrations
+May 30 09:36:33 [info] DROP TABLE IF EXISTS `cards`
+May 30 09:36:33 [info] 
+CREATE TABLE `cards` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `person_id` int(11) NOT NULL,
+  `status` int(11) NOT NULL DEFAULT '1',
+  `number` char(15) NOT NULL,
+  `expiration` date NOT NULL,
+  `balance` decimal(14,2) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=latin1
+May 30 09:36:33 [info] 
+
+
+DROP TABLE IF EXISTS `persons`
+May 30 09:36:33 [info] 
+CREATE TABLE `persons` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `company_id` int(11) DEFAULT NULL,
+  `first_name` varchar(45) DEFAULT NULL,
+  `last_name` varchar(45) DEFAULT NULL,
+  `address` varchar(45) DEFAULT NULL,
+  `address_2` varchar(45) DEFAULT NULL,
+  `city` varchar(45) DEFAULT NULL,
+  `state` char(2) DEFAULT NULL,
+  `zipcode` char(5) DEFAULT NULL,
+  `ssn` char(10) DEFAULT NULL,
+  `phone` char(10) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1
+May 30 09:36:33 [info] 
+
+
+DROP TABLE IF EXISTS `companies`
+May 30 09:36:33 [info] 
+CREATE TABLE `companies` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `name` varchar(255) NOT NULL,
+  `username` varchar(255) NOT NULL,
+  `password` varchar(255) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1
+May 30 09:36:33 [info] 
+
+DROP TABLE IF EXISTS `transactions`
+May 30 09:36:33 [info] 
+CREATE TABLE `transactions` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `card_id` int(11) NOT NULL,
+  `amount` decimal(10,2) NOT NULL,
+  `merchant` varchar(255) DEFAULT NULL,
+  `description` varchar(255) DEFAULT NULL,
+  `type` varchar(45) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1
+May 30 09:36:33 [info] INSERT INTO schema_migrations (version) VALUES ('20120530162727')
+May 30 09:37:33 [info] SELECT version FROM schema_migrations
+May 30 09:37:33 [info] SELECT version FROM schema_migrations
+May 30 09:37:33 [info] SELECT version FROM schema_migrations
+May 30 09:38:16 [info] SELECT version FROM schema_migrations
+May 30 09:38:26 [info] SELECT version FROM schema_migrations
+May 30 09:38:26 [info] SELECT version FROM schema_migrations
+May 30 09:38:26 [info] SELECT version FROM schema_migrations
+May 30 09:38:26 [info] DELETE FROM schema_migrations WHERE version = '20120530162727'
+May 30 09:38:31 [info] SELECT version FROM schema_migrations
+May 30 09:38:31 [info] SELECT version FROM schema_migrations
+May 30 09:38:31 [info] SELECT version FROM schema_migrations
+May 30 09:38:31 [info] DROP TABLE IF EXISTS `cards`
+May 30 09:38:31 [info] 
+CREATE TABLE `cards` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `person_id` int(11) NOT NULL,
+  `status` int(11) NOT NULL DEFAULT '1',
+  `number` char(15) NOT NULL,
+  `expiration` date NOT NULL,
+  `balance` decimal(14,2) NOT NULL,
+  `created_at` datetime,
+  `updated_at` datetime,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=latin1
+May 30 09:38:31 [info] 
+
+
+DROP TABLE IF EXISTS `persons`
+May 30 09:38:31 [info] 
+CREATE TABLE `persons` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `company_id` int(11) DEFAULT NULL,
+  `first_name` varchar(45) DEFAULT NULL,
+  `last_name` varchar(45) DEFAULT NULL,
+  `address` varchar(45) DEFAULT NULL,
+  `address_2` varchar(45) DEFAULT NULL,
+  `city` varchar(45) DEFAULT NULL,
+  `state` char(2) DEFAULT NULL,
+  `zipcode` char(5) DEFAULT NULL,
+  `ssn` char(10) DEFAULT NULL,
+  `phone` char(10) DEFAULT NULL,
+  `created_at` datetime,
+  `updated_at` datetime,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1
+May 30 09:38:31 [info] 
+
+
+DROP TABLE IF EXISTS `companies`
+May 30 09:38:31 [info] 
+CREATE TABLE `companies` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `name` varchar(255) NOT NULL,
+  `username` varchar(255) NOT NULL,
+  `password` varchar(255) NOT NULL,
+  `created_at` datetime,
+  `updated_at` datetime,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1
+May 30 09:38:31 [info] 
+
+DROP TABLE IF EXISTS `transactions`
+May 30 09:38:31 [info] 
+CREATE TABLE `transactions` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `card_id` int(11) NOT NULL,
+  `amount` decimal(10,2) NOT NULL,
+  `merchant` varchar(255) DEFAULT NULL,
+  `description` varchar(255) DEFAULT NULL,
+  `type` varchar(45) NOT NULL,
+  `created_at` datetime,
+  `updated_at` datetime,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1
+May 30 09:38:31 [info] INSERT INTO schema_migrations (version) VALUES ('20120530162727')
