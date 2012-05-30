@@ -43,8 +43,6 @@ Attributes:
 No attributes are required
 
 
-#### Actions
-
 To view all people for the current company:
 
 `Person?username...`
@@ -57,6 +55,15 @@ To view a specific person:
 
 `Person/view?personId=thePersonId`
 
+### Accounts
+To view an account for a particular user:
+
+`/Person/accounts`
+
+To create an account for a person:
+`/Person.createAccount`
+
+
 ### Cards
 
 Attributes:
@@ -67,11 +74,11 @@ Attributes:
 
 To issue a card (returns card number, expiration date, etc)
 
-`Person/issueCard?personId=thePersonId`
+`Account/issueCard?accountId=theAccountId`
 
-To view cards for a person:
+To view cards for an account:
 
-`Person/cards?personId=thePersonId`
+`Account/cards`
 
 To view more details about a particular card:
 
@@ -103,3 +110,8 @@ Attributes:
 To view transactions for a particular card:
 
 `Card/transactions?cardNum=someCardNumber`
+
+
+Or for a particular account:
+
+`Account/transactions`

@@ -1,11 +1,11 @@
 <?php
 class Card extends ModelBase {
   
-  public static $STATUS_ACTIVE = 1, $STATUS_DEACTIVE = 2;
+  public static $STATUS_PENDING_ACTIVATION = 0, $STATUS_ACTIVE = 1, $STATUS_DEACTIVE = 2, $STATUS_STOLEN = 3;
   
   
   static $belongs_to = array(
-    array('person'),
+    array('account'),
   );
   
   static $has_many = array(
@@ -13,19 +13,14 @@ class Card extends ModelBase {
   );
   
   static $validates_presence_of = array(
-     array('person'),
+     array('account'),
      array('status'),
      array('number'),
      array('expiration'),
-     array('balance')
   );
   
   static $validates_uniqueness_of = array(
     array('number'),
-  );
-  
-  static $validates_numericality_of = array(
-    array('balance', 'greater_than_or_equal_to' => 0)
   );
   
   static $after_create = array('make_issued_card_transaction');
@@ -34,7 +29,7 @@ class Card extends ModelBase {
    * Creates a new 'card_issue' transaction for this card upon issuing.
    */
   function make_issued_card_transaction() {
-    $this->createTransaction('card_issue', 0.0, 'card issued');
+    $this->createTransaction('card_issue', 0.0, 'card issued', null, true);
   }
   
   /**
@@ -55,6 +50,7 @@ class Card extends ModelBase {
       
     $transaction = new Transaction(array(
       'card_id'     => $this->id,
+      'account_id'  => $this->account_id,
       'amount'      => $amount,
       'description' => $description,
       'merchant'    => $merchant,
@@ -62,8 +58,8 @@ class Card extends ModelBase {
     ));
     Card::transaction(function() use($type, $amount, $description, $merchant, $transaction) {
       $transaction->save();
-      $this->balance += $amount;
-      $this->save();
+      $this->account->balance += $amount;
+      $this->account->save();
     });
     return $transaction;
   }

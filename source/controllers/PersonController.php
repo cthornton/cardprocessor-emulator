@@ -27,31 +27,28 @@ class PersonController extends Controller {
     return array('person' => $p->attributes());
   }
   
+  
   /**
-   * Get cards associated with a given person ID
+   * Get a list of accounts for a given person
    */
-  public function action_cards() {
-    $cards = $this->getPerson()->cards;
+  public function action_accounts() {
+    $p = $this->getPerson();
     $l = array();
-    foreach($cards as $c)
-      $l[] = $c->attributes();
-    return array('card' => $l);
+    foreach($p->accounts as $acct) $l[] = $acct->attributes();
+    return array('account' => $l);
   }
   
   /**
-   * Issues a card for a person with the given person ID
+   * Make a new account for a person
    */
-  public function action_issueCard() {
+  public function action_newAccount() {
     $p = $this->getPerson();
-    $card = new Card(array(
-      'person_id'  => $p->id,
-      'number'     => substr(number_format(time() * rand(),0,'',''),0,16), // random 16-digit card number
-      'status'     => 1, // active
-      'expiration' => date('Y-m-d', time() +  157784630), // expires in 5 years
-      'balance'    => 0.0
+    $acct = new Account(array(
+      'person_id' => $p->id,
+      'balance'   => 0.0
     ));
-    $card->save();
-    return $card->attributes();
+    $acct->save();
+    return array('account' => $acct->attributes());
   }
   
   /**

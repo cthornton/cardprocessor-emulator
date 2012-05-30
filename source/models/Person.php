@@ -8,7 +8,7 @@ class Person extends ModelBase {
   );
   
   static $has_many = array(
-    array('cards')
+    array('accounts')
   );
   
   
