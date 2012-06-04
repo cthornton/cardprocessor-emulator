@@ -1,0 +1,782 @@
+<?xml version="1.0" encoding="utf-8"?>
+<project version="2.0.0a3" title="Cardprocessor Emulator">
+  <file path="classes/Controller.php" hash="029da5fa520bb96a02e425b24006d487" package="Default">
+    <parse_markers>
+      <error line="8" code="50018">No DocBlock was found for property $company</error>
+      <error line="10" code="50010">No DocBlock was found for method requireCompany()</error>
+      <error line="17" code="50010">No DocBlock was found for method paramsToAttributes()</error>
+      <critical line="2" code="50005">No short description for class Controller</critical>
+      <error line="1" code="50007">No page-level DocBlock was found in file classes/Controller.php</error>
+    </parse_markers>
+    <class final="false" abstract="false" namespace="default" line="6" package="CardprocessorEmulator">
+      <name>Controller</name>
+      <full_name>\Controller</full_name>
+      <extends/>
+      <docblock line="2">
+        <description><![CDATA[]]></description>
+        <long-description><![CDATA[]]></long-description>
+        <tag line="2" name="package" description="CardprocessorEmulator"/>
+      </docblock>
+      <property final="false" static="false" visibility="protected" line="8" package="Default">
+        <name>$company</name>
+        <default><![CDATA[]]></default>
+      </property>
+      <method final="false" abstract="false" static="false" visibility="protected" namespace="default" line="10" package="">
+        <name>requireCompany</name>
+        <type>function</type>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="protected" namespace="default" line="17" package="">
+        <name>paramsToAttributes</name>
+        <type>function</type>
+      </method>
+    </class>
+  </file>
+  <file path="classes/Dispatch.php" hash="1ba0d3f2858356f41e82e9b3b14558e3" package="Default">
+    <parse_markers>
+      <error line="7" code="50018">No DocBlock was found for property $format</error>
+      <error line="7" code="50018">No DocBlock was found for property $path</error>
+      <error line="9" code="50018">No DocBlock was found for property $TYPES</error>
+      <error line="11" code="50010">No DocBlock was found for method __construct()</error>
+      <error line="22" code="50010">No DocBlock was found for method handleRequest()</error>
+      <critical line="2" code="50005">No short description for class Dispatch</critical>
+      <error line="1" code="50007">No page-level DocBlock was found in file classes/Dispatch.php</error>
+    </parse_markers>
+    <class final="false" abstract="false" namespace="default" line="5" package="CardprocessorEmulator">
+      <name>Dispatch</name>
+      <full_name>\Dispatch</full_name>
+      <extends/>
+      <docblock line="2">
+        <description><![CDATA[]]></description>
+        <long-description><![CDATA[]]></long-description>
+        <tag line="2" name="package" description="CardprocessorEmulator"/>
+      </docblock>
+      <property final="false" static="true" visibility="public" line="7" package="Default">
+        <name>$format</name>
+        <default><![CDATA['json']]></default>
+      </property>
+      <property final="false" static="false" visibility="public" line="7" package="Default">
+        <name>$path</name>
+        <default><![CDATA[]]></default>
+      </property>
+      <property final="false" static="true" visibility="public" line="9" package="Default">
+        <name>$TYPES</name>
+        <default><![CDATA[array('json', 'xml')]]></default>
+      </property>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="default" line="11" package="">
+        <name>__construct</name>
+        <type>function</type>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="default" line="22" package="">
+        <name>handleRequest</name>
+        <type>function</type>
+      </method>
+    </class>
+  </file>
+  <file path="classes/ModelBase.php" hash="a3e223ca53efdc42a11d86ce89a0de09" package="Default">
+    <parse_markers>
+      <error line="10" code="50010">No DocBlock was found for method save()</error>
+      <critical line="2" code="50005">No short description for class ModelBase</critical>
+      <error line="1" code="50007">No page-level DocBlock was found in file classes/ModelBase.php</error>
+    </parse_markers>
+    <class final="false" abstract="false" namespace="default" line="5" package="CardprocessorEmulator">
+      <name>ModelBase</name>
+      <full_name>\ModelBase</full_name>
+      <extends>\ActiveRecord\Model</extends>
+      <docblock line="2">
+        <description><![CDATA[]]></description>
+        <long-description><![CDATA[]]></long-description>
+        <tag line="2" name="package" description="CardprocessorEmulator"/>
+      </docblock>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="default" line="10" package="">
+        <name>save</name>
+        <type>function</type>
+      </method>
+    </class>
+  </file>
+  <file path="classes/Response.php" hash="73d7632e25a593bcfa37e3f455188543" package="Default">
+    <parse_markers>
+      <error line="7" code="50018">No DocBlock was found for property $errorString</error>
+      <error line="7" code="50018">No DocBlock was found for property $errorNo</error>
+      <error line="7" code="50018">No DocBlock was found for property $body</error>
+      <error line="9" code="50010">No DocBlock was found for method __construct()</error>
+      <error line="13" code="50010">No DocBlock was found for method toJson()</error>
+      <error line="17" code="50010">No DocBlock was found for method toXml()</error>
+      <error line="28" code="50010">No DocBlock was found for method toFormat()</error>
+      <error line="36" code="50010">No DocBlock was found for method toArray()</error>
+      <error line="47" code="50010">No DocBlock was found for method generateXmlFromArray()</error>
+      <critical line="2" code="50005">No short description for class Response</critical>
+      <error line="1" code="50007">No page-level DocBlock was found in file classes/Response.php</error>
+    </parse_markers>
+    <class final="false" abstract="false" namespace="default" line="5" package="CardprocessorEmulator">
+      <name>Response</name>
+      <full_name>\Response</full_name>
+      <extends/>
+      <docblock line="2">
+        <description><![CDATA[]]></description>
+        <long-description><![CDATA[]]></long-description>
+        <tag line="2" name="package" description="CardprocessorEmulator"/>
+      </docblock>
+      <property final="false" static="false" visibility="public" line="7" package="Default">
+        <name>$errorString</name>
+        <default><![CDATA[]]></default>
+      </property>
+      <property final="false" static="false" visibility="public" line="7" package="Default">
+        <name>$errorNo</name>
+        <default><![CDATA[0]]></default>
+      </property>
+      <property final="false" static="false" visibility="public" line="7" package="Default">
+        <name>$body</name>
+        <default><![CDATA[array()]]></default>
+      </property>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="default" line="9" package="">
+        <name>__construct</name>
+        <type>function</type>
+        <argument line="9">
+          <name>$body</name>
+          <default><![CDATA[array()]]></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="default" line="13" package="">
+        <name>toJson</name>
+        <type>function</type>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="default" line="17" package="">
+        <name>toXml</name>
+        <type>function</type>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="default" line="28" package="">
+        <name>toFormat</name>
+        <type>function</type>
+        <argument line="28">
+          <name>$format</name>
+          <default><![CDATA[null]]></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="protected" namespace="default" line="36" package="">
+        <name>toArray</name>
+        <type>function</type>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="protected" namespace="default" line="47" package="">
+        <name>generateXmlFromArray</name>
+        <type>function</type>
+        <argument line="47">
+          <name>$array</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+        <argument line="47">
+          <name>$parent</name>
+          <default><![CDATA[null]]></default>
+          <type/>
+        </argument>
+      </method>
+    </class>
+  </file>
+  <file path="classes/ResponseException.php" hash="aa18bd728e6ba4b6a1f1e881db142fdb" package="Default">
+    <parse_markers>
+      <error line="7" code="50018">No DocBlock was found for property $response</error>
+      <error line="7" code="50018">No DocBlock was found for property $httpCode</error>
+      <error line="7" code="50018">No DocBlock was found for property $httpString</error>
+      <error line="9" code="50010">No DocBlock was found for method __construct()</error>
+      <error line="19" code="50010">No DocBlock was found for method head()</error>
+      <critical line="2" code="50005">No short description for class ResponseException</critical>
+      <error line="1" code="50007">No page-level DocBlock was found in file classes/ResponseException.php</error>
+    </parse_markers>
+    <class final="false" abstract="false" namespace="default" line="5" package="CardprocessorEmulator">
+      <name>ResponseException</name>
+      <full_name>\ResponseException</full_name>
+      <extends>\Exception</extends>
+      <docblock line="2">
+        <description><![CDATA[]]></description>
+        <long-description><![CDATA[]]></long-description>
+        <tag line="2" name="package" description="CardprocessorEmulator"/>
+      </docblock>
+      <property final="false" static="false" visibility="public" line="7" package="Default">
+        <name>$response</name>
+        <default><![CDATA[]]></default>
+      </property>
+      <property final="false" static="false" visibility="public" line="7" package="Default">
+        <name>$httpCode</name>
+        <default><![CDATA[]]></default>
+      </property>
+      <property final="false" static="false" visibility="public" line="7" package="Default">
+        <name>$httpString</name>
+        <default><![CDATA[]]></default>
+      </property>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="default" line="9" package="">
+        <name>__construct</name>
+        <type>function</type>
+        <argument line="9">
+          <name>$errorString</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+        <argument line="9">
+          <name>$errorCode</name>
+          <default><![CDATA[-1]]></default>
+          <type/>
+        </argument>
+        <argument line="9">
+          <name>$httpCode</name>
+          <default><![CDATA[-1]]></default>
+          <type/>
+        </argument>
+        <argument line="9">
+          <name>$httpString</name>
+          <default><![CDATA['']]></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="default" line="19" package="">
+        <name>head</name>
+        <type>function</type>
+      </method>
+    </class>
+  </file>
+  <file path="controllers/AccountController.php" hash="2f40001f49ed676474b67a311ec660d1" package="Default">
+    <parse_markers>
+      <error line="14" code="50018">No DocBlock was found for property $account</error>
+      <error line="1" code="50007">No page-level DocBlock was found in file controllers/AccountController.php</error>
+    </parse_markers>
+    <class final="false" abstract="false" namespace="default" line="12" package="CardprocessorEmulator">
+      <name>AccountController</name>
+      <full_name>\AccountController</full_name>
+      <extends>\Controller</extends>
+      <docblock line="2">
+        <description><![CDATA[The account controller handles account related tasks, such as viewing an account, viewing
+cards, viewing transactions and more.]]></description>
+        <long-description><![CDATA[At minimum, the request URL must look like: <br>
+<pre><code>example.com/?username=companyUsername&password=companyPassword&accountId=accountId</code></pre>]]></long-description>
+        <tag line="2" name="package" description="CardprocessorEmulator"/>
+        <tag line="2" name="see" description="\Account" refers="\Account"/>
+      </docblock>
+      <property final="false" static="false" visibility="protected" line="14" package="Default">
+        <name>$account</name>
+        <default><![CDATA[]]></default>
+      </property>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="default" line="23" package="">
+        <name>__construct</name>
+        <type>function</type>
+        <docblock line="16">
+          <description><![CDATA[Ensures that the user is logged in and loads the requested account.]]></description>
+          <long-description><![CDATA[Loads the account based upon the $_REQUEST['accountId'] varaible. Will raise an exception if
+the account associated with the current company was not found.]]></long-description>
+          <tag line="16" name="throws" description="if the given accountId is not associated with the current company" type="\ResponseException">
+            <type by_reference="false">\ResponseException</type>
+          </tag>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="default" line="38" package="">
+        <name>action_view</name>
+        <type>function</type>
+        <docblock line="35">
+          <description><![CDATA[Returns an XML format of the current Account]]></description>
+          <long-description><![CDATA[]]></long-description>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="default" line="46" package="">
+        <name>action_cards</name>
+        <type>function</type>
+        <docblock line="42">
+          <description><![CDATA[Returns an XML list of cards associated with this account]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="42" name="see" description="\Card" refers="\Card"/>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="default" line="57" package="">
+        <name>action_transactions</name>
+        <type>function</type>
+        <docblock line="53">
+          <description><![CDATA[Views a list of transactions associated with this account]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="53" name="see" description="\Transaction" refers="\Transaction"/>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="default" line="68" package="">
+        <name>action_issueCard</name>
+        <type>function</type>
+        <docblock line="64">
+          <description><![CDATA[Issues a card for this account and returns the card details]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="64" name="see" description="\Card" refers="\Card"/>
+        </docblock>
+      </method>
+    </class>
+  </file>
+  <file path="controllers/CardController.php" hash="503d23a30fd636c63a4e116f38d204d4" package="Default">
+    <parse_markers>
+      <error line="8" code="50018">No DocBlock was found for property $card</error>
+      <error line="21" code="50010">No DocBlock was found for method action_index()</error>
+      <error line="25" code="50010">No DocBlock was found for method action_view()</error>
+      <error line="29" code="50010">No DocBlock was found for method action_activate()</error>
+      <error line="35" code="50010">No DocBlock was found for method action_deactivate()</error>
+      <error line="42" code="50010">No DocBlock was found for method action_transactions()</error>
+      <error line="50" code="50010">No DocBlock was found for method action_loadBalance()</error>
+      <critical line="2" code="50005">No short description for class CardController</critical>
+      <error line="1" code="50007">No page-level DocBlock was found in file controllers/CardController.php</error>
+    </parse_markers>
+    <class final="false" abstract="false" namespace="default" line="6" package="CardprocessorEmulator">
+      <name>CardController</name>
+      <full_name>\CardController</full_name>
+      <extends>\Controller</extends>
+      <docblock line="2">
+        <description><![CDATA[]]></description>
+        <long-description><![CDATA[]]></long-description>
+        <tag line="2" name="package" description="CardprocessorEmulator"/>
+      </docblock>
+      <property final="false" static="false" visibility="protected" line="8" package="Default">
+        <name>$card</name>
+        <default><![CDATA[]]></default>
+      </property>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="default" line="13" package="">
+        <name>__construct</name>
+        <type>function</type>
+        <docblock line="10">
+          <description><![CDATA[Gets the card based upon cardNumber or Card ID]]></description>
+          <long-description><![CDATA[]]></long-description>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="default" line="21" package="">
+        <name>action_index</name>
+        <type>function</type>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="default" line="25" package="">
+        <name>action_view</name>
+        <type>function</type>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="default" line="29" package="">
+        <name>action_activate</name>
+        <type>function</type>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="default" line="35" package="">
+        <name>action_deactivate</name>
+        <type>function</type>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="default" line="42" package="">
+        <name>action_transactions</name>
+        <type>function</type>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="default" line="50" package="">
+        <name>action_loadBalance</name>
+        <type>function</type>
+      </method>
+    </class>
+  </file>
+  <file path="controllers/CompanyController.php" hash="893264969ba6ae00d4da1245adce4e1e" package="Default">
+    <parse_markers>
+      <error line="8" code="50010">No DocBlock was found for method action_index()</error>
+      <error line="16" code="50010">No DocBlock was found for method action_new()</error>
+      <critical line="2" code="50005">No short description for class CompanyController</critical>
+      <error line="1" code="50007">No page-level DocBlock was found in file controllers/CompanyController.php</error>
+    </parse_markers>
+    <class final="false" abstract="false" namespace="default" line="6" package="CardprocessorEmulator">
+      <name>CompanyController</name>
+      <full_name>\CompanyController</full_name>
+      <extends>\Controller</extends>
+      <docblock line="2">
+        <description><![CDATA[]]></description>
+        <long-description><![CDATA[]]></long-description>
+        <tag line="2" name="package" description="CardprocessorEmulator"/>
+      </docblock>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="default" line="8" package="">
+        <name>action_index</name>
+        <type>function</type>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="default" line="16" package="">
+        <name>action_new</name>
+        <type>function</type>
+      </method>
+    </class>
+  </file>
+  <file path="controllers/PersonController.php" hash="a7a90215781f0531d74ed3e0dd9d1de6" package="Default">
+    <parse_markers>
+      <error line="7" code="50010">No DocBlock was found for method __construct()</error>
+      <error line="1" code="50007">No page-level DocBlock was found in file controllers/PersonController.php</error>
+    </parse_markers>
+    <class final="false" abstract="false" namespace="default" line="5" package="Default">
+      <name>PersonController</name>
+      <full_name>\PersonController</full_name>
+      <extends>\Controller</extends>
+      <docblock line="2">
+        <description><![CDATA[The person controller represents a Person and his abilities]]></description>
+        <long-description><![CDATA[]]></long-description>
+      </docblock>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="default" line="7" package="">
+        <name>__construct</name>
+        <type>function</type>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="default" line="14" package="">
+        <name>action_index</name>
+        <type>function</type>
+        <docblock line="11">
+          <description><![CDATA[Views all persons associated with this company]]></description>
+          <long-description><![CDATA[]]></long-description>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="default" line="25" package="">
+        <name>action_view</name>
+        <type>function</type>
+        <docblock line="22">
+          <description><![CDATA[View a specific person with a given person ID]]></description>
+          <long-description><![CDATA[]]></long-description>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="default" line="34" package="">
+        <name>action_accounts</name>
+        <type>function</type>
+        <docblock line="31">
+          <description><![CDATA[Get a list of accounts for a given person]]></description>
+          <long-description><![CDATA[]]></long-description>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="default" line="44" package="">
+        <name>action_newAccount</name>
+        <type>function</type>
+        <docblock line="41">
+          <description><![CDATA[Make a new account for a person]]></description>
+          <long-description><![CDATA[]]></long-description>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="default" line="57" package="">
+        <name>action_new</name>
+        <type>function</type>
+        <docblock line="54">
+          <description><![CDATA[Creates a new person]]></description>
+          <long-description><![CDATA[]]></long-description>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="private" namespace="default" line="68" package="">
+        <name>getPerson</name>
+        <type>function</type>
+        <docblock line="65">
+          <description><![CDATA[Gets a person based upon the current $_GET['personId'] and throws a ResponseException if the person could not be found]]></description>
+          <long-description><![CDATA[]]></long-description>
+        </docblock>
+      </method>
+    </class>
+  </file>
+  <file path="include.php" hash="80a14041bc0264c1f04b3944481e6ab6" package="Default">
+    <parse_markers>
+      <error line="12" code="50009">No DocBlock was found for function Closure()</error>
+      <error line="23" code="50009">No DocBlock was found for function Closure()</error>
+      <error line="1" code="50007">No page-level DocBlock was found in file include.php</error>
+    </parse_markers>
+    <include line="9" type="Require Once" package="Default">
+      <name>/activerecord/ActiveRecord.php</name>
+    </include>
+    <constant namespace="default" line="5" package="Default">
+      <name>SRC_DIR</name>
+      <value><![CDATA[realpath(dirname(__FILE__))]]></value>
+    </constant>
+    <constant namespace="default" line="6" package="Default">
+      <name>INC_DIR</name>
+      <value><![CDATA[realpath(SRC_DIR . '/../include')]]></value>
+    </constant>
+    <function namespace="default" line="23" package="Default">
+      <name>Closure</name>
+      <type>closure</type>
+      <argument line="23">
+        <name>$class</name>
+        <default><![CDATA[]]></default>
+        <type/>
+      </argument>
+    </function>
+  </file>
+  <file path="models/Account.php" hash="5ebdba78eba727526184fc043f3175aa" package="Default">
+    <parse_markers>
+      <error line="9" code="50018">No DocBlock was found for property $belongs_to</error>
+      <error line="13" code="50018">No DocBlock was found for property $has_many</error>
+      <error line="18" code="50018">No DocBlock was found for property $validates_numericality_of</error>
+      <error line="1" code="50007">No page-level DocBlock was found in file models/Account.php</error>
+    </parse_markers>
+    <class final="false" abstract="false" namespace="default" line="7" package="CardprocessorEmulator">
+      <name>Account</name>
+      <full_name>\Account</full_name>
+      <extends>\ModelBase</extends>
+      <docblock line="2">
+        <description><![CDATA[Represents an Account]]></description>
+        <long-description><![CDATA[]]></long-description>
+        <tag line="2" name="package" description="CardprocessorEmulator"/>
+      </docblock>
+      <property final="false" static="true" visibility="public" line="9" package="Default">
+        <name>$belongs_to</name>
+        <default><![CDATA[array(
+    array('person'),
+  )]]></default>
+      </property>
+      <property final="false" static="true" visibility="public" line="13" package="Default">
+        <name>$has_many</name>
+        <default><![CDATA[array(
+    array('cards'),
+    array('transactions'),
+  )]]></default>
+      </property>
+      <property final="false" static="true" visibility="public" line="18" package="Default">
+        <name>$validates_numericality_of</name>
+        <default><![CDATA[array(
+    array('balance', 'greater_than_or_equal_to' => 0)
+  )]]></default>
+      </property>
+    </class>
+  </file>
+  <file path="models/Card.php" hash="eb6bd3ded2b09bcc47e1dd48a6f5e3f8" package="Default">
+    <parse_markers>
+      <error line="10" code="50018">No DocBlock was found for property $STATUS_PENDING_ACTIVATION</error>
+      <error line="10" code="50018">No DocBlock was found for property $STATUS_ACTIVE</error>
+      <error line="10" code="50018">No DocBlock was found for property $STATUS_DEACTIVE</error>
+      <error line="10" code="50018">No DocBlock was found for property $STATUS_STOLEN</error>
+      <error line="13" code="50018">No DocBlock was found for property $belongs_to</error>
+      <error line="17" code="50018">No DocBlock was found for property $has_many</error>
+      <error line="21" code="50018">No DocBlock was found for property $validates_presence_of</error>
+      <error line="28" code="50018">No DocBlock was found for property $validates_uniqueness_of</error>
+      <error line="32" code="50018">No DocBlock was found for property $after_create</error>
+      <error line="1" code="50007">No page-level DocBlock was found in file models/Card.php</error>
+    </parse_markers>
+    <class final="false" abstract="false" namespace="default" line="8" package="CardprocessorEmulator">
+      <name>Card</name>
+      <full_name>\Card</full_name>
+      <extends>\ModelBase</extends>
+      <docblock line="2">
+        <description><![CDATA[The model that represents a card]]></description>
+        <long-description><![CDATA[]]></long-description>
+        <tag line="2" name="package" description="CardprocessorEmulator"/>
+      </docblock>
+      <property final="false" static="true" visibility="public" line="10" package="Default">
+        <name>$STATUS_PENDING_ACTIVATION</name>
+        <default><![CDATA[0]]></default>
+      </property>
+      <property final="false" static="false" visibility="public" line="10" package="Default">
+        <name>$STATUS_ACTIVE</name>
+        <default><![CDATA[1]]></default>
+      </property>
+      <property final="false" static="false" visibility="public" line="10" package="Default">
+        <name>$STATUS_DEACTIVE</name>
+        <default><![CDATA[2]]></default>
+      </property>
+      <property final="false" static="false" visibility="public" line="10" package="Default">
+        <name>$STATUS_STOLEN</name>
+        <default><![CDATA[3]]></default>
+      </property>
+      <property final="false" static="true" visibility="public" line="13" package="Default">
+        <name>$belongs_to</name>
+        <default><![CDATA[array(
+    array('account'),
+  )]]></default>
+      </property>
+      <property final="false" static="true" visibility="public" line="17" package="Default">
+        <name>$has_many</name>
+        <default><![CDATA[array(
+    array('transactions'),
+  )]]></default>
+      </property>
+      <property final="false" static="true" visibility="public" line="21" package="Default">
+        <name>$validates_presence_of</name>
+        <default><![CDATA[array(
+     array('account'),
+     array('status'),
+     array('number'),
+     array('expiration'),
+  )]]></default>
+      </property>
+      <property final="false" static="true" visibility="public" line="28" package="Default">
+        <name>$validates_uniqueness_of</name>
+        <default><![CDATA[array(
+    array('number'),
+  )]]></default>
+      </property>
+      <property final="false" static="true" visibility="public" line="32" package="Default">
+        <name>$after_create</name>
+        <default><![CDATA[array('make_issued_card_transaction')]]></default>
+      </property>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="default" line="37" package="">
+        <name>make_issued_card_transaction</name>
+        <type>function</type>
+        <docblock line="34">
+          <description><![CDATA[Creates a new 'card_issue' transaction for this card upon issuing.]]></description>
+          <long-description><![CDATA[]]></long-description>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="default" line="53" package="">
+        <name>createTransaction</name>
+        <type>function</type>
+        <docblock line="41">
+          <description><![CDATA[Makes a transaction to this card]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="41" name="param" description="the type of transaction" type="string" variable="$type">
+            <type by_reference="false">string</type>
+          </tag>
+          <tag line="41" name="param" description="the amount to make a transaction for" type="float" variable="$amount">
+            <type by_reference="false">float</type>
+          </tag>
+          <tag line="41" name="param" description="the description of the transaction" type="string" variable="$description">
+            <type by_reference="false">string</type>
+          </tag>
+          <tag line="41" name="param" description="the name of the merchant" type="string" variable="$merchant">
+            <type by_reference="false">string</type>
+          </tag>
+          <tag line="41" name="param" description="if TRUE, doesn't check to make sure the card is active. If FALSE, then checks to make sure the card isn't active before making a transaction" type="boolean" variable="$force">
+            <type by_reference="false">boolean</type>
+          </tag>
+          <tag line="41" name="return" description="the resulting Transaction object" type="\Transaction">
+            <type by_reference="false">\Transaction</type>
+          </tag>
+          <tag line="41" name="throws" description="if this card is inactive AND $force is false, OR if $amount causes the card balance to fall below zero." type="\ResponseException">
+            <type by_reference="false">\ResponseException</type>
+          </tag>
+        </docblock>
+        <argument line="53">
+          <name>$type</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+        <argument line="53">
+          <name>$amount</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+        <argument line="53">
+          <name>$description</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+        <argument line="53">
+          <name>$merchant</name>
+          <default><![CDATA[null]]></default>
+          <type/>
+        </argument>
+        <argument line="53">
+          <name>$force</name>
+          <default><![CDATA[false]]></default>
+          <type/>
+        </argument>
+      </method>
+    </class>
+  </file>
+  <file path="models/Company.php" hash="0419c2644d1d924f825ca7c2e295609b" package="Default">
+    <parse_markers>
+      <error line="8" code="50018">No DocBlock was found for property $validates_presence_of</error>
+      <error line="12" code="50018">No DocBlock was found for property $validates_uniqueness_of</error>
+      <error line="17" code="50018">No DocBlock was found for property $has_many</error>
+      <critical line="2" code="50005">No short description for class Company</critical>
+      <error line="1" code="50007">No page-level DocBlock was found in file models/Company.php</error>
+    </parse_markers>
+    <class final="false" abstract="false" namespace="default" line="6" package="CardprocessorEmulator">
+      <name>Company</name>
+      <full_name>\Company</full_name>
+      <extends>\ModelBase</extends>
+      <docblock line="2">
+        <description><![CDATA[]]></description>
+        <long-description><![CDATA[]]></long-description>
+        <tag line="2" name="package" description="CardprocessorEmulator"/>
+      </docblock>
+      <property final="false" static="true" visibility="public" line="8" package="Default">
+        <name>$validates_presence_of</name>
+        <default><![CDATA[array(
+     array('username'), array('password'), array('name')
+  )]]></default>
+      </property>
+      <property final="false" static="true" visibility="public" line="12" package="Default">
+        <name>$validates_uniqueness_of</name>
+        <default><![CDATA[array(
+    array('username'),
+    array('name')
+  )]]></default>
+      </property>
+      <property final="false" static="true" visibility="public" line="17" package="Default">
+        <name>$has_many</name>
+        <default><![CDATA[array(
+    array('persons'),
+  )]]></default>
+      </property>
+    </class>
+  </file>
+  <file path="models/Person.php" hash="3209672e4e0d6bff3a966e4f0899a81d" package="Default">
+    <parse_markers>
+      <error line="8" code="50018">No DocBlock was found for property $table_name</error>
+      <error line="10" code="50018">No DocBlock was found for property $belongs_to</error>
+      <error line="14" code="50018">No DocBlock was found for property $has_many</error>
+      <error line="19" code="50018">No DocBlock was found for property $validates_presence_of</error>
+      <critical line="2" code="50005">No short description for class Person</critical>
+      <error line="1" code="50007">No page-level DocBlock was found in file models/Person.php</error>
+    </parse_markers>
+    <class final="false" abstract="false" namespace="default" line="6" package="CardprocessorEmulator">
+      <name>Person</name>
+      <full_name>\Person</full_name>
+      <extends>\ModelBase</extends>
+      <docblock line="2">
+        <description><![CDATA[]]></description>
+        <long-description><![CDATA[]]></long-description>
+        <tag line="2" name="package" description="CardprocessorEmulator"/>
+      </docblock>
+      <property final="false" static="true" visibility="public" line="8" package="Default">
+        <name>$table_name</name>
+        <default><![CDATA['persons']]></default>
+      </property>
+      <property final="false" static="true" visibility="public" line="10" package="Default">
+        <name>$belongs_to</name>
+        <default><![CDATA[array(
+    array('company'),
+  )]]></default>
+      </property>
+      <property final="false" static="true" visibility="public" line="14" package="Default">
+        <name>$has_many</name>
+        <default><![CDATA[array(
+    array('accounts')
+  )]]></default>
+      </property>
+      <property final="false" static="true" visibility="public" line="19" package="Default">
+        <name>$validates_presence_of</name>
+        <default><![CDATA[array(
+     array('ssn'), array('company')
+  )]]></default>
+      </property>
+    </class>
+  </file>
+  <file path="models/Transaction.php" hash="842fea92130d04e36a7f2c36880d3166" package="Default">
+    <parse_markers>
+      <error line="8" code="50018">No DocBlock was found for property $validates_presence_of</error>
+      <error line="12" code="50018">No DocBlock was found for property $belongs_to</error>
+      <error line="17" code="50018">No DocBlock was found for property $validates_numericality_of</error>
+      <critical line="2" code="50005">No short description for class Transaction</critical>
+      <error line="1" code="50007">No page-level DocBlock was found in file models/Transaction.php</error>
+    </parse_markers>
+    <class final="false" abstract="false" namespace="default" line="6" package="CardprocessorEmulator">
+      <name>Transaction</name>
+      <full_name>\Transaction</full_name>
+      <extends>\ModelBase</extends>
+      <docblock line="2">
+        <description><![CDATA[]]></description>
+        <long-description><![CDATA[]]></long-description>
+        <tag line="2" name="package" description="CardprocessorEmulator"/>
+      </docblock>
+      <property final="false" static="true" visibility="public" line="8" package="Default">
+        <name>$validates_presence_of</name>
+        <default><![CDATA[array(
+     array('amount'),array('description'),array('type'), array('account')
+  )]]></default>
+      </property>
+      <property final="false" static="true" visibility="public" line="12" package="Default">
+        <name>$belongs_to</name>
+        <default><![CDATA[array(
+    array('card'),
+    array('account'),
+  )]]></default>
+      </property>
+      <property final="false" static="true" visibility="public" line="17" package="Default">
+        <name>$validates_numericality_of</name>
+        <default><![CDATA[array(
+    array('amount')
+  )]]></default>
+      </property>
+    </class>
+  </file>
+  <package name="" full_name=""/>
+  <package name="CardprocessorEmulator" full_name="CardprocessorEmulator"/>
+  <package name="Default" full_name="Default"/>
+  <namespace name="default" full_name="default"/>
+  <marker count="0">todo</marker>
+  <marker count="0">fixme</marker>
+  <deprecated count="0"/>
+</project>

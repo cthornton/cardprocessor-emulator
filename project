@@ -4,6 +4,7 @@ function show_help {
   echo "Available Actions:"
   echo " * server - starts a development server (PHP 5.4 ONLY!)"
   echo " * migrate - runs the migration tool"
+  echo " * doc - generate documentation"
 }
 
 command=$1
@@ -34,8 +35,9 @@ case "$command" in
         php include/ruckus_migrations/main.php db:migrate
       ;;
     esac
-  
-  
+  ;;
+  "doc" )
+    phpdoc -d emulator -t doc --title "Cardprocessor Emulator"
   ;;
   *)
     show_help
