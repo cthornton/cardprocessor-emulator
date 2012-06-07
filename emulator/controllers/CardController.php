@@ -14,7 +14,7 @@ class CardController extends Controller {
     $this->requireCompany();
     $this->card = Card::first(array(
       'joins'      => 'LEFT JOIN accounts ON accounts.id = cards.account_id LEFT JOIN persons ON persons.id = accounts.person_id',
-      'conditions' => array('persons.company_id = ? AND (cards.number = ? cards.OR id = ?) ', $this->company->id, $_GET['cardNum'], $_GET['cardId'])));
+      'conditions' => array('persons.company_id = ? AND (cards.number = ? OR cards.id = ?) ', $this->company->id, $_GET['cardNum'], $_GET['cardId'])));
     if($this->card == null) throw new ResponseException('Card not found', -4);
   }
   
@@ -40,8 +40,13 @@ class CardController extends Controller {
   
   
   public function action_transactions() {
-    $l = array();
-    foreach($this->card->transactions as $trans)
+    if(!empty($_REQUEST['days'])) {
+      $days = intval($_REQUEST['days']) * 86400;
+      $transactions = Transaction::all(array('conditions' => array('card_id = ? AND created_at >= FROM_UNIXTIME(?)', $this->card->id, time() - $days)));
+    } else {
+      $transactions = $this->card->transactions;
+    }
+    foreach($transactions as $trans)
       $l[] = $trans->attributes();
     return array('transaction' => $l);
   }

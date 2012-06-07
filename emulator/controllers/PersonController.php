@@ -61,6 +61,16 @@ class PersonController extends Controller {
     $person->save();
     return array('personId' => $person->id);
   }
+  
+  /**
+   * Updates a person
+   */
+  public function action_update() {
+    $p = $this->getPerson();
+    $p->update_attributes(
+        $this->paramsToAttributes('first_name', 'last_name', 'address', 'address_2', 'city', 'state', 'zipcode', 'ssn', 'phone'));
+    return array('person' => $p->attributes());
+  }
 
   /**
    * Gets a person based upon the current $_GET['personId'] and throws a ResponseException if the person could not be found

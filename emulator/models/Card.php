@@ -31,6 +31,11 @@ class Card extends ModelBase {
   
   static $after_create = array('make_issued_card_transaction');
   
+  
+  function balance() {
+    return $this->account->balance;
+  }
+  
   /**
    * Creates a new 'card_issue' transaction for this card upon issuing.
    */
@@ -41,7 +46,8 @@ class Card extends ModelBase {
   /**
    * Makes a transaction to this card
    * @param string $type the type of transaction
-   * @param float $amount the amount to make a transaction for
+   * @param float $amount the amount to make a transaction for. This can be POSITIVE for adding money to the card or
+   *        NEGATIVE for removing money from the account
    * @param string $description the description of the transaction
    * @param string $merchant the name of the merchant
    * @param boolean $force if TRUE, doesn't check to make sure the card is active. If FALSE, then checks to make
