@@ -9,14 +9,18 @@ class Dispatch {
   public static $TYPES = array('json', 'xml');
   
   public function __construct() {
-    $p = empty($_GET['q']) ?  $_SERVER['PATH_INFO'] : $_GET['q'];
+    // var_dump($_SERVER);
+    $toUse = empty($_SERVER['PATH_INFO']) ? $_SERVER['REDIRECT_URL'] : $_SERVER['PATH_INFO'];
+    $p = empty($_GET['q']) ?  $toUse : $_GET['q'];
     self::$path = explode('/', $p);
+    // var_dump(self::$path);    
     array_shift(self::$path);
     $type = $_GET['format'];
     if(!empty($type) && in_array($type, self::$TYPES))
       self::$format = $type;
     header('content-type: text/' . self::$format);
   }
+  
   
   
   public function handleRequest() {
