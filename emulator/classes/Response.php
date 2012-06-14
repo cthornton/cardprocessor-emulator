@@ -28,8 +28,8 @@ class Response {
   public function toFormat($format = null) {
     if($format == null) $format = Dispatch::$format;
     switch($format) {
-      case 'xml': return $this->toXml();
-      default: return $this->toJson();
+      case 'json': return $this->toJson();
+      default: return $this->toXml();;
     }
   }
   

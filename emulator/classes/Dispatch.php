@@ -4,7 +4,7 @@
  */
 class Dispatch {
   
-  public static $format = 'json', $path;
+  public static $format = 'xml', $path;
   
   public static $TYPES = array('json', 'xml');
   
@@ -22,8 +22,35 @@ class Dispatch {
   }
   
   
+  public function handleError($errno, $errstr, $errfile, $errline, $errcontext) {
+    $type = "";
+    switch($errno) {
+    case E_USER_ERROR:
+      $type = 'Error';
+      break;
+    case E_USER_WARNING:
+      $type = 'Warning';
+      break;
+    case E_USER_NOTICE:
+      $type = 'Notice';
+      break;
+    case E_STRICT: // Ignore Strict
+      return;
+      break;
+    default:
+      $type = 'Unknown';
+    }
+    
+    $re = new ResponseException('Internal Server Error: ' . "[$type] $errstr", 500, 500, 'Internal Server Error');
+    $body = "At $errfile #$errline (errno #$errno)\n";
+    $re->response->body = $body;
+    die($re->response->toFormat());
+    
+  }
+  
   
   public function handleRequest() {
+    set_error_handler(array($this, 'handleError'));
     try {
       $notFoundEx = new ResponseException('Unknown Action', 404, 404, 'Not Found');
       $p = self::$path;
