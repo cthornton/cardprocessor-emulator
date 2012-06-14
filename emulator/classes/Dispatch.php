@@ -34,7 +34,8 @@ class Dispatch {
     case E_USER_NOTICE:
       $type = 'Notice';
       break;
-    case E_STRICT: // Ignore Strict
+    case E_STRICT: // Ignore Strict and notice
+    case E_NOTICE:
       return;
       break;
     default:
